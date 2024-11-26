@@ -1,4 +1,9 @@
 def vernam_cipher_encrypt(plain_text, key):
+	en_data = ''
+	for i in range(len(plain_text)):
+		x = ord(plain_text[i])^ord(key[i])
+		en_data+=chr(x)
+	print(en_data)
 	encrypted_text = ''.join([chr(ord(plain_text[i]) ^ ord(key[i])) for i in range(len(plain_text))])
 	return encrypted_text
 
